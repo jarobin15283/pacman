@@ -14,7 +14,7 @@ public class InfoPanel
 {
     // instance variables - replace the example below with your own
     private JButton btn;
-    private JPanel pnl;
+    private GamePanel pnl;
     private JFrame frm;
 
     /**
@@ -24,8 +24,9 @@ public class InfoPanel
     {
         btn = new JButton(new ImageIcon("pacman1.png"));
         btn.setMargin (new Insets (0, 0, 0, 0));
-        pnl = new JPanel();
+        pnl = new GamePanel();
         pnl.add(btn);
+        pnl.setPreferredSize(pnl.getPreferredSize());
         frm = new JFrame("g");
         frm.add(pnl);
         frm.pack();
@@ -59,10 +60,17 @@ public class InfoPanel
                 x++;
                 z++;
             }
-            else
+            else if(x == 2)
             {
                 TimeUnit.MILLISECONDS.sleep(100);
                 p.btn.setIcon(new ImageIcon("pacman3.png"));
+                x++;
+                z++;
+            }
+            else
+            {
+                TimeUnit.MILLISECONDS.sleep(100);
+                p.btn.setIcon(new ImageIcon("pacman2.png"));
                 x = 0;
                 z++;
             }

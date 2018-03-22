@@ -1,3 +1,17 @@
+import javax.swing.JColorChooser;
+import javax.swing.JPanel;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
+import java.awt.event.*;
+
+import java.io.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 
 /**
  * Write a description of class GamePanel here.
@@ -5,29 +19,21 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class GamePanel
+public class GamePanel extends JPanel
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Dimension panelDimension;
 
     /**
      * Constructor for objects of class GamePanel
      */
     public GamePanel()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public Dimension getPreferredSize()
     {
-        // put your code here
-        return x + y;
+        panelDimension = new Dimension(896, 1116);
+        return panelDimension;
     }
 }
