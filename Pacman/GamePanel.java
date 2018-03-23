@@ -22,18 +22,33 @@ import java.awt.image.BufferedImage;
 public class GamePanel extends JPanel
 {
     private Dimension panelDimension;
+    private BufferedImage tileset;
+    private Tile[][] tiles;
 
     /**
      * Constructor for objects of class GamePanel
      */
     public GamePanel()
     {
-        
+        String delimeters = "\\s+";
     }
 
     public Dimension getPreferredSize()
     {
-        panelDimension = new Dimension(896, 1116);
+        panelDimension = new Dimension(720, 900);
         return panelDimension;
+    }
+    
+    public void loadTiles(String s)
+    {
+        try
+        {
+            tileset = ImageIO.read(new File(s));
+            int numTilesAcross = (tileset.getWidth() / tileSize);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
